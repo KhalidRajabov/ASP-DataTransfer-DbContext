@@ -1,4 +1,4 @@
-﻿
+﻿@model HomeVM
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,13 +8,24 @@
 <ul style="list-style: none">
     <li>@ViewBag.name</li>
     <li>@ViewData["surname"]</li>
+    <li>@ViewData["name"]</li>
     <li>@TempData["age"]</li>
 </ul>
 <hr />
 <ul style="list-style: none; color: red">
-    @foreach (var item in ViewBag.students)
-   {
-       <li>@item.Name @item.Surname @item.Id</li>
-   }
+   @foreach (var item in Model.Students)
+  {
+      {
+          <li> @item.Name  @item.Surname @item.Id </li>
+      }
+  }
+</ul>
+<ul style="list-style: none; color: red">
+
+       @foreach (var item in Model.Groups)
+      {
+          <li> @item.Name @item.Id </li>
+      }
+   
 </ul>
 
