@@ -28,7 +28,31 @@ namespace FrontToBack.Controllers
 
             //eyni qaydada, tekrarlanan datalar oldugu uchun tolist atilir
             homeVM.Categories = _context.Categories.ToList();
+
+            //eyni qayda
+            homeVM.Products = _context.Products.Skip(3).ToList();
+
+            homeVM.Employees=_context.Employees.ToList();
+
+            homeVM.Blogs= _context.Blogs.ToList();
+            homeVM.AuthorSliders = _context.AuthorSliders.ToList();
+
+            homeVM.BottomSliders=_context.BottomSliders.ToList();
+
             return View(homeVM);
+        }
+        public IActionResult Detail(int? id, string name)
+        {
+            if (id==null)
+            {
+                return NotFound();
+            }
+
+            Product dbProduct = _context.Products.FirstOrDefault(p=>p.Id==id);
+            if (dbProduct==null)  return NotFound();
+
+            return View(dbProduct);
+            
         }
     }
 }

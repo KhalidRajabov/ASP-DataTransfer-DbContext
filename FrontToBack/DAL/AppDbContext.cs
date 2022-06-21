@@ -14,5 +14,13 @@ namespace FrontToBack
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<Employees> Employees { get; set; }
+
+        public DbSet<Blogs> Blogs { get; set; }
+
+        public DbSet <AuthorSlider> AuthorSliders { get; set; }
+
+        public DbSet<BottomSlider> BottomSliders { get; set; }
     }
 }
