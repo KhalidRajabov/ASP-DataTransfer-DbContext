@@ -13,6 +13,7 @@ namespace FrontToBack
     {
         public static void Main(string[] args)
         {
+        Console.WriteLine("hello");
             CreateHostBuilder(args).Build().Run();
         }
 
