@@ -6,8 +6,7 @@ namespace FrontToBack.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "FooterSlider");
+            
 
             migrationBuilder.CreateTable(
                 name: "BottomSliders",
@@ -23,23 +22,5 @@ namespace FrontToBack.Migrations
                 });
         }
 
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropTable(
-                name: "BottomSliders");
-
-            migrationBuilder.CreateTable(
-                name: "FooterSlider",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FooterSlider", x => x.Id);
-                });
-        }
     }
 }

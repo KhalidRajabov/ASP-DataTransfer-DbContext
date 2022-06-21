@@ -10,6 +10,13 @@ $(document).ready(function () {
         $(this).parent().removeClass("active");
 
     })
+
+    $(document).on('click', '#loadmore', function () {
+        alert("okay")
+
+    })
+
+
     $(document).on('click', '#mobile-navbar-show', function () {
         $('.mobile-navbar').addClass("active");
 
