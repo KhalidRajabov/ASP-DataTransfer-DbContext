@@ -1,15 +1,6 @@
 ﻿@model List<Product>
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
 
-
- <section id="products">
-     <input type="hidden" id="productCount" value="@ViewBag.ProductCount"/>
-            <div class="container">
-                <div class="row" id="productList">
-                   @foreach (var item in Model)
+       @foreach (var item in Model)
                   {
                        <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
                         <div class="product-item text-center" data-id="@item.Category.Name.ToLower()">
@@ -28,10 +19,3 @@
                         </div>
                     </div>
                   }
-                </div>
-
-                <div class="row d-flex justify-content-center mt-5 mb-5"> 
-                    <button class="btn btn-danger w-25" id="loadmore">Load More...</button>
-                </div>
-            </div>
-        </section>
